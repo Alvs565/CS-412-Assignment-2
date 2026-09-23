@@ -10,5 +10,5 @@ from . import views
 urlpatterns = [
     path('', views.main, name="main"),
     path('order', views.order, name="order"),
-    path(r'sumbit',views.submit, name="submit")
+    path('submit',views.submit, name="submit")
 ]
