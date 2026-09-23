@@ -1,0 +1,64 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+    <h1> <center><strong>Quick&Easy Pizza</strong></center> </h1> <br>
+    <h2> Place an Order Here: </h2> <br>
+
+    <form action="{% url 'submit' %}" method="POST">
+        {% csrf_token %}
+
+        <p> <strong> Select your Pizza Here: </strong></p>
+
+        <select id="Classic Cheese Pizza" name="Classic" value="Classic Cheese Pizza">
+            <option name="None" value="None"> None </option>
+            <option name="Regular" value="Regular"> Regular ($9)</option>
+            <option name="Extra Cheese" value="Extra Cheese"> Extra Cheese ($10)</option>
+        </select>
+       <br> <br>
+       <input type="checkbox" id="Meat Lovers Pizza" name="Pizza" value="Meat Lovers Pizza">
+       <label for="Meat Lovers Pizza"> Meat Lovers Pizza ($11) </label>
+       <br> <br>
+       <input type="checkbox" id="Veggie Pizza" name="Pizza" value="Veggie Pizza">
+       <label for="Veggie Pizza"> Veggie Pizza ($7) </label>
+       <br><br>
+       <input type="checkbox" id="BBQ Pizza" name="Pizza" value="BBQ Pizza"> 
+       <label for="BBQ Pizza"> BBQ Pizza ($10) </label>
+
+       <br> <br>
+
+        <p><strong> Today's Special: </strong></p>
+        <input type="checkbox" id="Special" name="Special" value="{{Special}}">
+
+       <label for="Special"> {{Special}} </label>
+
+       <br><br>
+        
+        <p><strong> Additional Instructions: </strong></p>
+
+        <textarea name="Special Instructions" id="Special Instructions" cols="40" rows="10">Special Instructions Here:</textarea>
+
+        <br><br>
+
+        <p> <strong> Customer Information: </strong></p>
+
+       <label for="name"> Enter your name: </label>
+       <input type="text" id="name" name="name"> 
+       <br> <br>
+       <label for="phone number"> Enter your phone number: </label>
+       <input type="text" id="phone number" name="phone number"> 
+       <br> <br>
+       <label for="email"> Enter your email: </label>
+       <input type="email" id="email" name="email">
+
+       <br><br>
+
+        <p> <strong> Submit Your Order Here: </strong></p>
+        <input type="submit" name="Submit">
+
+    </form>
+</div>
+
+
+{% endblock %}

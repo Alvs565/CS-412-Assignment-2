@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hw', #NEW 
-    'quotes' #assignment 1
+    'hw',  
+    'quotes',
+    'formdata',
+    'restaurant',
 ]
 
 MIDDLEWARE = [
