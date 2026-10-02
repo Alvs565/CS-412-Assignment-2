@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles-blog.css' %}">
+    </head>
+
+    <body>
+        <head>
+            <h1> Mini_Insta: Stay up to Date with all your Friends! </h1>
+            <h2> Check our Profiles Here: </h2>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'show_all_profiles' %}">All Profiles</a></li>
+                </ul>
+            </nav>
+        </head> 
+
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

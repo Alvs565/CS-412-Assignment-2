@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h1> {{article.title}} </h1>
+
+<!-- Displays the QuerySet of all Articles: -->
+<!--{{articles}} -->
+
+<main class="grid-container">
+     <article>
+        <div>
+            <h2> {{article.title}}</h2>
+            <h3> by {{article.author}}</h3>
+            <p>
+                {{article.text}}
+            </p>
+        </div>
+
+        <img src="{{article.image_url}}" alt="John_Lenin">
+    </article>
+     <hr>
+</main>
+{% endblock %}

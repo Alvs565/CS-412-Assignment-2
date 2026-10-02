@@ -1,0 +1,26 @@
+{% extends 'mini_insta/base.html' %}
+
+{% block content %}
+
+<h1> Showing all Profiles: </h1>
+
+<!-- Displays the QuerySet of all Articles: -->
+<!--{{articles}} -->
+
+<main class="grid-container">
+    <!-- Scriplet code for Loop-->
+     {% for profile in profiles %}
+     <article>
+        <div>
+            <h2> {{profile.display_name}}</h2>
+            <h3> {{profile.username}}</h3>
+
+        </div>
+        <a href="{% url 'profile' profile.pk %}"> <!-- Calls the article function-->
+        <img src="{{profile.profile_image_url}}" alt="img">
+        </a>
+    </article>
+
+     {% endfor %}
+</main>
+{% endblock %}
